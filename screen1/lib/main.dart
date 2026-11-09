@@ -19,7 +19,10 @@ class Screen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        leading: Icon(Icons.menu, color: Colors.white),
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: Colors.white),
+          onPressed: () {},
+        ),
         title: Text(
           "My Shop",
           style: TextStyle(
@@ -29,9 +32,14 @@ class Screen extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(Icons.notifications_none, color: Colors.white),
-          const SizedBox(width: 16),
-          Icon(Icons.shopping_cart, color: Colors.white),
+          IconButton(
+            icon: Icon(Icons.notifications_none, color: Colors.white),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.shopping_cart, color: Colors.white),
+            onPressed: () {},
+          ),
         ],
         backgroundColor: const Color.fromARGB(255, 13, 88, 217),
       ),
@@ -49,41 +57,59 @@ class Screen extends StatelessWidget {
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             const SizedBox(height: 20),
-            Container(
+
+            SizedBox(
               width: 200,
               height: 50,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 8, 96, 169),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Text(
-                "Shop Now",
-                style: TextStyle(color: Colors.white, fontSize: 16),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 8, 96, 169),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                child: Text(
+                  "Shop Now",
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
               ),
             ),
             const SizedBox(height: 20),
-            Container(
+            SizedBox(
               width: 200,
               height: 48,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey, width: 1.5),
-                borderRadius: BorderRadius.circular(24),
+              child: OutlinedButton(
+                onPressed: () {},
+                style: OutlinedButton.styleFrom(
+                  side: const BorderSide(color: Colors.grey, width: 1.5),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                ),
+                child: const Text(
+                  'View Offers',
+                  style: TextStyle(color: Colors.blueAccent, fontSize: 16),
+                ),
               ),
+            ),
+
+            const SizedBox(height: 20),
+
+            TextButton(
+              onPressed: () {},
               child: const Text(
-                'View Offers',
+                "Skip",
                 style: TextStyle(color: Colors.blueAccent, fontSize: 16),
               ),
             ),
-            const SizedBox(height: 20),
-            Text("Skip", style: TextStyle(color: Colors.blueAccent)),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem( icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "search"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
         ],
