@@ -18,9 +18,12 @@ class Screen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back, color: Colors.black),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {},
+        ),
         title: Text("Settings"),
-        actions: [Icon(Icons.more_vert)],
+        actions: [IconButton(icon: Icon(Icons.more_vert), onPressed: () {})],
       ),
       body: Center(
         child: Column(
@@ -34,38 +37,44 @@ class Screen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Later",
-                  style: TextStyle(
-                    color: const Color.fromARGB(255, 16, 94, 130),
-                  ),
-                ),
-                SizedBox(width: 20),
-                Container(
+                SizedBox(
                   width: 70,
-                  height: 30,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 1.5),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    "Cancel",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 16, 94, 130),
+                  height: 40,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Later",
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 16, 94, 130),
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(width: 20),
-                Container(
-                  width: 70,
-                  height: 30,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                    borderRadius: BorderRadius.circular(15),
+                SizedBox(
+                  width: 100,
+                  height: 40,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 16, 94, 130),
+                      ),
+                    ),
                   ),
-                  child: Text("Save", style: TextStyle(color: Colors.white)),
+                ),
+                SizedBox(width: 20),
+                SizedBox(
+                  width: 100,
+                  height: 40,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 4, 37, 95),
+                    ),
+                    onPressed: () {},
+                    child: Text("Save", style: TextStyle(color: Colors.white)),
+                  ),
                 ),
               ],
             ),
