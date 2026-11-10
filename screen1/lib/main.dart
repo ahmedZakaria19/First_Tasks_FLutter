@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Screen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Screen());
   }
 }
 
@@ -65,10 +65,6 @@ class Screen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 8, 96, 169),
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
-                  ),
                 ),
                 child: Text(
                   "Shop Now",
@@ -82,13 +78,7 @@ class Screen extends StatelessWidget {
               height: 48,
               child: OutlinedButton(
                 onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Colors.grey, width: 1.5),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                ),
-                child: const Text(
+                child: Text(
                   'View Offers',
                   style: TextStyle(color: Colors.blueAccent, fontSize: 16),
                 ),
@@ -99,7 +89,7 @@ class Screen extends StatelessWidget {
 
             TextButton(
               onPressed: () {},
-              child: const Text(
+              child: Text(
                 "Skip",
                 style: TextStyle(color: Colors.blueAccent, fontSize: 16),
               ),
@@ -109,7 +99,7 @@ class Screen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem( icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "search"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
         ],
