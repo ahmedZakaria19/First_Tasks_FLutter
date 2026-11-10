@@ -7,7 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(Object context) {
-    return MaterialApp(home: Screen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Screen());
   }
 }
 
